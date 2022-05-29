@@ -90,7 +90,11 @@ include_once 'config.php';
                     ?> </td>
                     
                     <td><?php echo $row["cours"] ?></td>
-                    <td><button value= '<?php echo $row["id_groupe"] ?>'>Voir</button></td>
+                    <td>
+                      <form action="groupes_list" method="post">
+                      <button name="id_groupe" value= '<?php echo $row["id_groupe"] ?>'>Voir</button>
+                      </form>
+                    </td>
                 </tr>
                 
                 <?php }}else {

@@ -90,7 +90,12 @@ include_once 'config.php';
 <section class="groupe_list">
 <div class="table">
         <div class="table_header">
-            <p>La liste des etudiants</p>
+            <p>La liste des etudiants groupe:
+              
+              <?php
+                    // echo $row_etudiant['groupe'];
+            
+            ?></p>
             <div> <input placeholder="chercher " /> <button class="add_new" onclick='register_add()'>+ Ajouter etudiant</button> </div>
         </div>
        
@@ -101,41 +106,46 @@ include_once 'config.php';
                         <th>Id</th>
                         <th>Image</th>
                         <th>Nom</th>
-                        <th>Cours</th>
+                        <th>Tele</th>
+                        <th>Email</th>
+                        <th>CIN</th>
                         <th>Prix</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
+                  <?php
+                    
+                  if(isset($_POST['id_groupe'])){
+
+
+                    $sql="SELECT * FROM `etudaint` WHERE id_groupe=1";
+                    $result_etudiant=mysqli_query($conn,$sql);
+          
+                  if (mysqli_num_rows($result_etudiant) > 0) {
+                    
+                  while($row_etudiant=mysqli_fetch_assoc($result_etudiant)){    
+                  
+                  
+                  ?>
                     <tr>
-                        <td>1</td>
+                        <td><?php echo $row_etudiant['id_etd']?></td>
                         <td><img src=https://drive.google.com/uc?export=view&id=1oL5yePDRKaJ3rwr2_DedGETXfqtF_gv4 /></td>
-                        <td>Janaoui Imade</td>
-                        <td>Deutsch</td>
-                        <td>1200 DH</td>
+                        <td><?php echo $row_etudiant['prenom']." ".$row_etudiant['nom']?></td>
+                        <td><?php echo $row_etudiant['tele']?></td>
+                        <td><?php echo $row_etudiant['email']?></td>
+                        <td><?php echo $row_etudiant['cin']?></td>
+                        <td><?php echo $row_etudiant['prix']?></td>
                         <td> <button><i class="fa-solid fa-pen-to-square"></i></button> <button><i class="fa-solid fa-trash"></i></button> </td>
                     </tr>
 
-
-                    <tr>
-                        <td>1</td>
-                        <td><img src=https://drive.google.com/uc?export=view&id=1oL5yePDRKaJ3rwr2_DedGETXfqtF_gv4 /></td>
-                        <td>Janaoui Imade</td>
-                        <td>Deutsch</td>
-                        <td>1200 DH</td>
-                        <td> <button><i class="fa-solid fa-pen-to-square"></i></button> <button><i class="fa-solid fa-trash"></i></button> </td>
-                    </tr>
-
-
-                    <tr>
-                        <td>1</td>
-                        <td><img src=https://drive.google.com/uc?export=view&id=1oL5yePDRKaJ3rwr2_DedGETXfqtF_gv4 /></td>
-                        <td>Janaoui Imade</td>
-                        <td>Deutsch</td>
-                        <td>1200 DH</td>
-                        <td> <button><i class="fa-solid fa-pen-to-square"></i></button> <button><i class="fa-solid fa-trash"></i></button> </td>
-                    </tr>
-                   
+                    <?php
+                      } }else{
+                        echo 'resultat 0';
+                       }
+                    }
+                      
+                    ?>
                 </tbody>
 </section>
 
