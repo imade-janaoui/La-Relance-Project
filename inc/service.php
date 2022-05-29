@@ -34,4 +34,31 @@ mysqli_close($conn);
 }
 
 
+
+if(isset($_POST['Register'])){
+  $nom=$_POST['nom_etd'];
+  $prenom=$_POST['prenom_etd'];
+  $email=$_POST['email_etd'];
+  $tele=$_POST['tele_etd'];
+  $cin=$_POST['cin_etd'];
+  $prix=$_POST['prix_etd'];
+  $pwd=$_POST['pwd_etd'];
+  $pwd_confirm=$_POST['nom_etd'];
+
+  if($cin==$pwd){
+    $sql="INSERT INTO `etudaint`(`nom`, `prenom`, `tele`, `email`, `prix`, `cin`, `groupe`, `password`, `id_prof`, `id_groupe`) VALUES('$nom','$prenom',$tele,'$email',$prix,'$cin','Deutsch B1','$pwd',1,1)";
+    
+    if($reqt=mysqli_query($conn,$sql)){
+
+    
+   
+    header('Location:groupes_list.php');
+  }else{
+    echo '<script> alert("du hast eine probleme"); </script>';
+  }
+}
+  mysqli_close($conn);
+
+}
+
 ?>

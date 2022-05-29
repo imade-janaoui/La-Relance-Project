@@ -12,74 +12,59 @@ include_once 'config.php';
 <div class="container">
     <div class="title">Inscription</div>
     <div class="content">
-      <form action="#">
+      <form  action="service.php" method="post">
         <div class="user-details">
           <div class="input-box">
             <span class="details">Nom </span>
-            <input type="text" placeholder="Entrer le nom" required>
+            <input type="text" name="nom_etd" placeholder="Entrer le nom" required>
           </div>
           <div class="input-box">
             <span class="details">Prénom</span>
-            <input type="text" placeholder="Entrer le prénom" required>
+            <input type="text" name="prenom_etd" placeholder="Entrer le prénom" required>
           </div>
           <div class="input-box">
             <span class="details">Email</span>
-            <input type="text" placeholder="Entrer email" required>
+            <input type="text" name="email_etd" placeholder="Entrer email" required>
           </div>
           <div class="input-box">
             <span class="details">Télé</span>
-            <input type="text" placeholder="Entrer le numéro de téléphone" required>
+            <input type="text" name="tele_etd" placeholder="Entrer le numéro de téléphone" required>
           </div>
           <div class="input-box">
             <span class="details">CIN</span>
-            <input type="text" placeholder="Entrer CIN" required>
+            <input type="text" name="cin_etd" placeholder="Entrer CIN" required>
           </div>
           <div class="input-box">
             <span class="details">Prix</span>
-            <input type="number" placeholder="Entrer prix DH" required>
+            <input type="number" name="prix_etd" placeholder="Entrer prix DH" required>
           </div>
           <div class="input-box">
             <span class="details">Password</span>
-            <input type="text" placeholder="Entrer mot de passe" required>
+            <input type="text" name="pwd_etd" placeholder="Entrer mot de passe" required>
           </div>
           <div class="input-box">
             <span class="details">Confirm Password</span>
-            <input type="text" placeholder="Confirmer mot de passe" required>
-          </div>
-          <div class="input-box">
-          <span class="details">choisir une groupe</span>
-          <select name="" id="" >
-            <option selected disabled>choisir une groupe</option>
-            <?php 
-            $sql='select * from groupe';
-            $result_groupe = mysqli_query($conn, $sql);
-             if (mysqli_num_rows($result_groupe) > 0) {
-                // output data of each row
-                while($row = mysqli_fetch_assoc($result_groupe)) {
-            ?>
-             <option value="<?php echo $row["id_groupe"] ?>"> <?php echo $row["nom_groupe"] ?> </option>
-                
-                <?php }} ?>
-            </select>
-          
-        </div>
-        <div class="gender-details">
+            <input type="text" name="pwd_conf_etd" placeholder="Confirmer mot de passe" required>
+          </div> 
+
+        <!-- <div class="gender-details">
           <input type="radio" name="gender" id="dot-1">
           <input type="radio" name="gender" id="dot-2">
           <span class="gender-title">Le sexe</span>
           <div class="category">
-            <label for="dot-1">
-            <span class="dot one"></span>
-            <span class="gender">Homme</span>
-          </label>
-          <label for="dot-2">
-            <span class="dot two"></span>
-            <span class="gender">Femme</span>
-          </label>
+                 <label for="dot-1">
+                    <span class="dot one"></span>
+                    <span class="gender">Homme</span>
+                 </label>
+                 <label for="dot-2">
+                    <span class="dot two"></span>
+                    <span class="gender">Femme</span>
+                </label>
           </div>
-        </div>
+        </div> -->
+      </div>
         <div class="button">
-          <input type="submit" value="Register">
+          <input type="submit" name="Register" value="Register">
         </div>
       </form>
     </div>
@@ -119,7 +104,7 @@ include_once 'config.php';
                   if(isset($_POST['id_groupe'])){
 
 
-                    $sql="SELECT * FROM `etudaint` WHERE id_groupe=1";
+                    $sql="SELECT * FROM `etudaint` WHERE id_groupe=".$_POST["id_groupe"];
                     $result_etudiant=mysqli_query($conn,$sql);
           
                   if (mysqli_num_rows($result_etudiant) > 0) {
@@ -140,9 +125,7 @@ include_once 'config.php';
                     </tr>
 
                     <?php
-                      } }else{
-                        echo 'resultat 0';
-                       }
+                      } }
                     }
                       
                     ?>
