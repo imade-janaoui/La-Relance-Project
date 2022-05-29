@@ -1,0 +1,31 @@
+
+ body{  
+    height: 100vh;  
+    /* width: 100vw;   */
+    margin: 0;  
+    padding: 0;  
+    display: flex;  
+    align-items: center;  
+    justify-content: center;  
+  
+  }  
+  .login-div{  
+    max-width: 430px;  
+    padding: 35px;  
+    border: 1px solid #ddd;  
+    border-radius: 8px;  
+  }  
+  .logo{  
+    /* background: url(../img/logo.png);  
+    background-position: center;  
+    background-repeat: no-repeat;  
+    background-size: cover;  
+    width: 100px;  
+    height: 100px;  
+    margin: 0 auto;  
+    border-radius: 50%;   */
+    text-align: center;
+  }  
+  .logo img{
+      width: 289px;
+  }
