@@ -1,6 +1,8 @@
 <?php
+session_start();
+require_once 'header.php';
 require_once 'seadbar.php';
- require_once 'header.php';
+
  
 
 
@@ -12,7 +14,13 @@ require_once 'seadbar.php';
         <div class="user_panle_img">
             <div class="img_profile">
                     <img src="../img/customer01.jpg" alt="">
-                    <h3 class="user_name">Janaoui Imade</h3>
+                    <h3 class="user_name">
+                        <?php
+                            echo $_SESSION['nom_etudiant']." ".$_SESSION['prenom_etudiant'];
+
+                        ?>
+
+                    </h3>
             </div>
             
         </div>

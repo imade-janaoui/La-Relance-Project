@@ -17,6 +17,9 @@ include_once 'header.php';
         <!-- =================exercise 1=========== -->
         <h2>Exercise 1</h2>
         <div class="test1 rechtig_falsch">
+               <span>
+                   <input type="text" name="exam_name" id="exam_name" placeholder=" Le nom de test">
+               </span>
                 <span id="text">text 1</span>
                 <div class="text1 question">
                     <ol>
@@ -235,8 +238,12 @@ include_once 'header.php';
               
           </label>
       </div> -->
+      <div class="button_submit">
+            <button type="submit" id="Sauvegarder">Sauvegarder</button>
+      </div>
+      
 </div>
-<button type="submit" id="Sauvegarder">Sauvegarder</button>
+           
     </form>
 
 </section>

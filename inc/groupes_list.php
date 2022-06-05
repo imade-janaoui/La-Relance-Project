@@ -130,6 +130,10 @@ include_once 'config.php';
                       
                     ?>
                 </tbody>
+            <table>
+        </div>
+
+</div>
 </section>
 
 

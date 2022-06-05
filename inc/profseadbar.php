@@ -7,7 +7,12 @@
                         <span class="logo_small">
                             <!-- <img src="../img/logo_small.jpg" alt="" srcset=""> -->
                         </span>
-                        <span class="title_relance">La Relance</span>
+                        <span class="title_relance">
+                            <?php
+                            session_start();
+                                    echo "Pr.".$_SESSION['nom_prof']." ".$_SESSION['prenom_prof'];
+                            ?>
+                        </span>
                     </a>
                 </li>
 

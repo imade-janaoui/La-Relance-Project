@@ -1,7 +1,7 @@
 <?php
 include_once 'profseadbar.php';
 include_once 'header.php';
-
+// session_start();
 
 ?>
 <section class="prof_classes">
