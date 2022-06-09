@@ -84,7 +84,7 @@ body {
 
 .navigation ul li a .icon {
   position: relative;
-  /* top: 13px; */
+  top: 13px;
   display: block;
   min-width: 60px;
   height: 60px;
@@ -816,7 +816,7 @@ font-family: 'Roboto Condensed', sans-serif;
   font-family: sans-serif;
   color: #aaa;
 }
-.horen_test .rechtig_falsch input[type='text']{
+.horen_test .rechtig_falsch input[type='text'],input[type='number']{
   padding: 8px 20px;
     width: 75%;
     outline: none;
@@ -837,6 +837,23 @@ div.button_submit
 {
   width: 100%;
   text-align: center;
+}
+form.form_num_input{
+  padding: 20px;
+}
+form.form_num_input div {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  /* padding: 20px; */
+}
+form.form_num_input div input[type="submit"]{
+  padding: 7px 18px;
+  border-radius: 10px;
+  border: 1px solid #1b3aae;
+  color: #fff;
+  background-color: #0081ff;
+  cursor: pointer;
 }
 button#Sauvegarder{
   border:green;

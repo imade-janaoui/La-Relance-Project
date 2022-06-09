@@ -1,6 +1,7 @@
 <?php
-include_once 'profseadbar.php';
 include_once 'header.php';
+include_once 'profseadbar.php';
+
 // session_start();
 
 ?>

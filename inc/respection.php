@@ -1,6 +1,7 @@
 <?php
-include 'resp_seadbar.php';
 include 'header.php';
+include 'resp_seadbar.php';
+
 include_once 'config.php';
 
 $reqt='select * from groupe';
