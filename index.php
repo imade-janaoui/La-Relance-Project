@@ -1,6 +1,7 @@
 <!DOCTYPE html>  
  <html lang="en">  
   <head>  
+   
    <meta charset="UTF-8" />  
    <meta http-equiv="X-UA-Compatible" content="IE=edge" />  
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
@@ -14,7 +15,15 @@
    />  
    <!-- Compiled and minified JavaScript -->  
    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>  
-  </head>  
+    
+</head> 
+<script  language="JavaScript" type="text/JavaScript">
+         function preventback(){
+            window.history.forward();
+         } 
+         setTimeout("preventback()",0);
+         window.onundoad=function(){null;}
+      </script> 
   <body>  
       <form action="inc/service.php" method="post">
    <div class="login-div">  

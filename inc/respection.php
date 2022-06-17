@@ -34,8 +34,8 @@ $result = mysqli_query($conn, $reqt);
 
 <div class="classes">
     <div>
-        <span>6/7j</span>
-        <span>Les Étudiants</span>
+        <span>120</span>
+        <span>Étudiants</span>
     </div>
     <div>
     <i class="fa fa-clock-o"></i>

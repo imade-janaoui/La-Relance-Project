@@ -5,9 +5,9 @@
                 <li>
                     <a href="#">
                         <span class="icon">
-                            <ion-icon name="logo-apple"></ion-icon>
+                        <ion-icon name="person-outline"></ion-icon>
                         </span>
-                        <span class="title">Brand Name</span>
+                        <span class="title">Asmae </span>
                     </a>
                 </li>
 
@@ -66,7 +66,7 @@
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="../index.php">
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>
@@ -90,7 +90,7 @@
                 </div>
 
                 <div class="user" id="user" onclick="menuToggle()">
-                    <img src="assets/imgs/customer01.jpg" alt="">
+                    <img src="../img/customer01.jpg" alt="">
                 </div>
             </div>
            

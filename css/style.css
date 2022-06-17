@@ -84,7 +84,7 @@ body {
 
 .navigation ul li a .icon {
   position: relative;
-  top: 13px;
+  /* top: 13px; */
   display: block;
   min-width: 60px;
   height: 60px;
@@ -509,8 +509,9 @@ section.coure .coure_A1 .coure_img img{
  section.content{
   background-color: #fff;
   width: 95%;
+  height: min-content;
   margin: 10px 30px;
-  height: 300px;
+  
     padding: 10px;
  }
 section.content div.partie_chapitre>div>h2{
@@ -744,7 +745,7 @@ section.prof_classes div.classes div i{
   height: min-content;
   background-color: #fff;
   margin: 25px;
- 
+ padding: 25px;
   border: 1.5px solid #0081ff;
   border-radius: 20px;
 }
@@ -816,7 +817,26 @@ font-family: 'Roboto Condensed', sans-serif;
   font-family: sans-serif;
   color: #aaa;
 }
-.horen_test .rechtig_falsch input[type='text'],input[type='number']{
+.para_chap p {
+  padding: 20px;
+  font-size: 20px;
+  /* font-style: initial; */
+  font-weight: 500;
+  font-family: cursive;
+  text-decoration: underline;
+}
+
+.link_meet{
+  width: 100%;
+}
+.meet_lien,.test_lien{
+  margin: 20px;
+}
+.meet_lien a,.test_lien a{
+  margin: 20px;
+  display: block;
+}
+.horen_test .rechtig_falsch input[type='text'],input[type='number'],.chose_file>span>input[type='text']{
   padding: 8px 20px;
     width: 75%;
     outline: none;
@@ -1167,7 +1187,7 @@ td {
 .select:hover::after {
   color: #23b499;
 }
-.list_etudiant div.groupe_name select{
+section .select select{
   /* width: 200px;
     padding: 10px;
     border-radius: 7px;

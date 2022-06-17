@@ -149,6 +149,135 @@ if(isset($_POST['login'])){
 }
 }
 
+// =====================test sauvegarder ======================
+
+if(isset($_POST['test_horen_Sauvegarder'])){
+  echo  "<pre>";
+   print_r(array($_POST['question1']));
+   echo  "</pre>";
+}
 
 
-?>
+//==================  link meeting =========================
+  if(isset($_POST['meet_link'])){
+    
+          $groupe_id=$_POST['groupe_id'];
+          $link_meet=$_POST['link'];
+        
+          $reqt="SELECT * FROM `groupe` where id_groupe=$groupe_id";
+          $result=mysqli_query($conn,$reqt);
+          $value=mysqli_fetch_array($result);
+          $prof_id=$value['id_prof'];
+
+          $sql="INSERT INTO `activite`( `nom`, `nom_activite`, `id_prof`, `id_groupe`) VALUES ('lien meeting','$link_meet',$prof_id,$groupe_id)";
+          if($result=mysqli_query($conn,$sql)){
+            header("Location:test.php");
+          }else
+          {
+            echo 'error';
+          }
+          mysqli_close($conn);
+         
+
+  }
+
+    // =================chaptre============
+
+    if(isset($_POST['chap_link'])){
+      
+            $groupe_id=$_POST['groupe_id'];
+            $link_meet=$_POST['meet_link'];
+           
+            $reqt="SELECT * FROM `groupe` where id_groupe=$groupe_id";
+            $result=mysqli_query($conn,$reqt);
+            $value=mysqli_fetch_array($result);
+            $prof_id=$value['id_prof'];
+  
+            $sql="INSERT INTO `activite`( `nom`, `nom_activite`, `id_prof`, `id_groupe`) VALUES ('lien meeting','$link_meet',$prof_id,$groupe_id)";
+            if($result=mysqli_query($conn,$sql)){
+              header("Location:test.php");
+            }else
+            {
+              echo 'error';
+            }
+            mysqli_close($conn);
+           
+  
+    }
+
+    //============== les chapitre =====================
+  if(isset($_POST['chapitre_save'])){
+//     $chapitre_name=$_POST['chapitre_name'];
+//     $id_groupe=$_POST['groupe_id'];
+   
+//       $chapitre_file= $_FILES['file']['name'];
+      
+    
+//     $reqt="SELECT * FROM `groupe` where id_groupe=$id_groupe";
+//     $result=mysqli_query($conn,$reqt);
+//     $value=mysqli_fetch_assoc($result);
+//     $prof_id=$value['id_prof'];
+//     if(!empty($chapitre_file)){
+//       // destination of the file on the server
+//   $destination = 'chapitres/' . $chapitre_file;
+//   // get the file extension
+//   $extension = pathinfo($chapitre_file, PATHINFO_EXTENSION);
+//   $file = $_FILES['file']['tmp_name'];
+//   $size = $_FILES['file']['size'];
+//   if (!in_array($extension, ['pdf', 'docx'])) {
+   
+//       // header("Location: ../articles.php?errorarticle=You file extension must be .zip,.pdf, .docx, .pbg, .jpg");
+//       echo 'error extension';
+    
+  
+//     } elseif ($_FILES['file']['size'] > 1000000) {
+//       echo 'error size';
+//      }else{
+//       if (move_uploaded_file($file, $destination)) {
+//         $sql="INSERT INTO `activite`( `nom`, `nom_activite`, `id_prof`, `id_groupe`) VALUES ('$chapitre_name','$chapitre_file',$prof_id,$groupe_id)";
+//         if (mysqli_query($conn, $sql)) {
+//         header("Location:chapitre.php");
+//     }
+//   }
+// }
+
+//   }else{
+//     echo 'error';
+//   }
+$title = $_POST["chapitre_name"];
+$id_groupe=$_POST['groupe_id'];
+$reqt="SELECT * FROM `groupe` where id_groupe=$id_groupe";
+    $result=mysqli_query($conn,$reqt);
+    $value=mysqli_fetch_assoc($result);
+    $prof_id=$value['id_prof'];
+#file name with a random number so that similar dont get replaced
+if(isset($_FILES["file"])){
+  $pname = $_FILES["file"]["name"];
+
+#temporary file name to store file
+$tname = $_FILES["file"]["tmp_name"];
+
+ #upload directory path
+$uploads_dir ='docx/';
+#TO move the uploaded file to specific location
+if(move_uploaded_file($tname,$uploads_dir.$pname)){
+#sql query to insert into database
+// $sql = "INSERT into fileup(title,image) VALUES('$title','$pname')";
+$sql="INSERT INTO `activite`( `nom`, `nom_activite`, `id_prof`, `id_groupe`) VALUES ('$title','$pname',$prof_id,$id_groupe)";
+
+if(mysqli_query($conn,$sql)){
+
+header("Location:chapitre.php");
+}
+else{
+    echo "Error";
+}
+
+}else{
+  echo "Error folder" ;
+}
+}
+ 
+}
+
+  ?>

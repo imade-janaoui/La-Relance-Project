@@ -18,12 +18,12 @@ include_once 'profseadbar.php';
         
     </form>
 
-    <form action="" method="post" class="form_horen_test">
+    <form action="service.php" method="post" class="form_horen_test">
         
       
        
         <div class="chose_file">
-            <input type="file" id="real-file" hidden="hidden" />
+            <input type="file" id="real-file" name="audio.horen.test" hidden="hidden" />
             <button type="button" id="custom-button">CHOOSE A FILE</button>
             <span id="custom-text">No file chosen, yet.</span>
         </div>
@@ -49,32 +49,32 @@ include_once 'profseadbar.php';
                 <div class="text1 question">
                     <ol>
                         <li>
-                                    <input type="text" name="question<?php echo $i+1;?>" placeholder="question <?php echo $i+1;?>">
+                                    <input type="text" name="question[]" placeholder="question <?php echo $i+1;?>">
                                 <label for="">
                             
                                 <span id="vrai">vrai</span>
-                                <input type="radio" name="question<?php echo $i+1;?>_choix" value="question<?php echo $i+1;?>_true" >
+                                <input type="radio" name="question1_choix[]" value="question1_true" >
                                 </label>
                                 <label for=""> 
                                     <span id="faux">faux</span> 
-                                    <input type="radio" name="question<?php echo $i+1;?>_choix" value="question<?php echo $i+1;?>_false" >
+                                    <input type="radio" name="question1_choix[]" value="question1_false" >
                                 </label>
                         </li>
                         <li>
                             <div>
-                                <input type="text" name="question<?php echo $i+2;?>" placeholder="question <?php echo $i+2;?>">
+                                <input type="text" name="choix[]" placeholder="question <?php echo $i+2;?>">
                             </div>
                             <div>
                                 <ol>
                                     <li>
-                                        <input type="text" name="question<?php echo $i+2;?>_choi1" placeholder="Choix 1">
-                                        <input type="radio" name="question<?php echo $i+2;?>_choix_verif" value="question<?php echo $i+2;?>_choi1" >
+                                        <input type="text" name="question2_choi1[]" placeholder="Choix 1">
+                                        <input type="radio" name="question2_choix_verif[]" value="question2_choi1" >
                                 </li>
-                                    <li><input type="text" name="question<?php echo $i+2;?>_choi2" placeholder="Choix 2">
-                                    <input type="radio" name="question<?php echo $i+2;?>_choix_verif" value="question<?php echo $i+2;?>_choi2" >
+                                    <li><input type="text" name="question2_choi2[]" placeholder="Choix 2">
+                                    <input type="radio" name="question2_choix_verif[]" value="question2_choi2" >
                                 </li>
-                                    <li><input type="text" name="question<?php echo $i+2;?>_choi3" placeholder="Choix 3">
-                                    <input type="radio" name="question<?php echo $i+2;?>_choix_verif" value="question<?php echo $i+2;?>_choi3" >
+                                    <li><input type="text" name="question2_choi3[]" placeholder="Choix 3">
+                                    <input type="radio" name="question2_choix_verif[]" value="question2_choi3" >
                                 </li>
                                 </ol>
                             </div>
@@ -86,7 +86,7 @@ include_once 'profseadbar.php';
                     }
             ?>
       <div class="button_submit">
-            <button type="submit" id="Sauvegarder">Sauvegarder</button>
+            <button type="submit" name="test_horen_Sauvegarder" id="Sauvegarder">Sauvegarder</button>
       </div>
       
 </div>

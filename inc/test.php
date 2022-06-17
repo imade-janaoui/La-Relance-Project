@@ -1,6 +1,7 @@
 <?php
-include_once 'profseadbar.php';
 include_once 'header.php';
+include_once 'profseadbar.php';
+
 
 
 ?>
@@ -48,6 +49,14 @@ include_once 'header.php';
             <div class="against" id="against" onclick=" window.location.href=this.id+'.php';">
             <i class='fas fa-not-equal'></i>
                 <p>against</p>
+            </div>
+            <div class="chapitre" id="chapitre" onclick=" window.location.href=this.id+'.php';"> 
+            <i class="fa fa-book"></i>
+                <p>Chapitre</p>
+            </div>
+            <div class="cours" id="cours" onclick=" window.location.href=this.id+'.php';"> 
+            <i class='fas fa-chalkboard-teacher'></i>
+                <p>Cours en ligne</p>
             </div>
     </div>
     

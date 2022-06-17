@@ -71,7 +71,7 @@
                 </li>
 
                 <li>
-                    <a href="../index.php">
+                    <a href="service.php">
                         <span class="icon">
                             <ion-icon name="log-out-outline"></ion-icon>
                         </span>
@@ -96,7 +96,7 @@
                 </div>
 
                 <div class="user" id="user" onclick="menuToggle()">
-                    <img src="assets/imgs/customer01.jpg" alt="">
+                    <img src="../img/customer01.jpg" alt="">
                 </div>
             </div>
            
