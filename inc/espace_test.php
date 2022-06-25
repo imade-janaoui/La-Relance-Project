@@ -47,7 +47,7 @@ include_once 'config.php'
                       
             
             ?>
-                    <a href="<?php echo $row_activ['nom_activite'] ?>"> <?php echo $row_activ['nom'] ?></a>
+                    <a href="service?file_id=<?php echo $row_activ['id_activite'] ?>"> <?php echo $row_activ['nom'] ?></a>
          
             <?php
                             }
